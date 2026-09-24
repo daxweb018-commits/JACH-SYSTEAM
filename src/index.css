@@ -1,0 +1,496 @@
+@import "tailwindcss";
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out infinite;
+}
+
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+  
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Glassmorphism custom effects */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45), 
+              0 0 0 1px rgba(255, 255, 255, 0.05),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Zamboo Asali Signature Glowing Golden Glassmorphism Card */
+.glass-panel-zamboo {
+  background: linear-gradient(160deg, rgba(28, 20, 12, 0.46) 0%, rgba(14, 10, 6, 0.68) 100%);
+  backdrop-filter: blur(28px) saturate(210%);
+  -webkit-backdrop-filter: blur(28px) saturate(210%);
+  border: 1.5px solid rgba(245, 184, 46, 0.65);
+  box-shadow: 0 0 35px -5px rgba(245, 184, 46, 0.35),
+              inset 0 0 20px rgba(245, 184, 46, 0.14),
+              0 30px 60px -15px rgba(0, 0, 0, 0.85);
+}
+
+.glass-panel-zamboo:hover {
+  border-color: rgba(245, 184, 46, 0.85);
+  box-shadow: 0 0 45px -5px rgba(245, 184, 46, 0.48),
+              inset 0 0 25px rgba(245, 184, 46, 0.18),
+              0 35px 70px -15px rgba(0, 0, 0, 0.9);
+}
+
+.glass-input-zamboo {
+  background: rgba(18, 14, 10, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-input-zamboo:focus {
+  background: rgba(28, 20, 14, 0.65);
+  border-color: rgba(245, 184, 46, 0.8);
+  box-shadow: 0 0 0 3px rgba(245, 184, 46, 0.22),
+              0 0 16px rgba(245, 184, 46, 0.2);
+}
+
+.btn-honey-gold {
+  background: linear-gradient(90deg, #F6BA35 0%, #F5A81D 50%, #E59315 100%);
+  border: 1px solid rgba(255, 235, 160, 0.5);
+  box-shadow: 0 8px 25px -4px rgba(245, 184, 46, 0.5),
+              inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-honey-gold:hover {
+  background: linear-gradient(90deg, #FFC444 0%, #F8B32B 50%, #EE9E1F 100%);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 30px -3px rgba(245, 184, 46, 0.65),
+              inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
+}
+
+.btn-honey-gold:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px -3px rgba(245, 184, 46, 0.4);
+}
+
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), 
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+              inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-button-primary {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3),
+              inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-button-primary:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.18) 100%);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4),
+              inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.glass-button-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtle glass reflections */
+.glass-reflection {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-reflection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: 0.75s ease;
+}
+
+.glass-reflection:hover::before {
+  left: 200%;
+}
+
+/* Floating animation */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+/* High-Speed Vigorous Card Shake with Water Splatter */
+@keyframes card-shake-vigorous {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  8% {
+    transform: translate(-18px, 1px) rotate(-1.8deg);
+  }
+  17% {
+    transform: translate(17px, -1px) rotate(1.8deg);
+  }
+  26% {
+    transform: translate(-15px, 1px) rotate(-1.3deg);
+  }
+  35% {
+    transform: translate(14px, -1px) rotate(1.3deg);
+  }
+  44% {
+    transform: translate(-11px, 1px) rotate(-0.9deg);
+  }
+  53% {
+    transform: translate(10px, -1px) rotate(0.9deg);
+  }
+  62% {
+    transform: translate(-7px, 0px) rotate(-0.5deg);
+  }
+  71% {
+    transform: translate(6px, 0px) rotate(0.5deg);
+  }
+  80% {
+    transform: translate(-4px, 0px) rotate(-0.2deg);
+  }
+  89% {
+    transform: translate(2px, 0px) rotate(0.1deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.animate-card-shake {
+  animation: card-shake-vigorous 0.48s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.card-error-glow {
+  border-color: rgba(239, 68, 68, 0.85) !important;
+  box-shadow: 0 0 35px 3px rgba(239, 68, 68, 0.48),
+              inset 0 0 22px rgba(239, 68, 68, 0.22),
+              0 30px 60px -15px rgba(0, 0, 0, 0.92) !important;
+}
+
+/* Water Droplet Fling & Splatter Animation ("Kujikunguta Maji") */
+@keyframes droplet-spray {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.6) rotate(var(--rot, 0deg));
+  }
+  25% {
+    opacity: 0.95;
+    transform: translate(calc(var(--tx) * 0.4), calc(var(--ty) * 0.4 - 8px)) scale(1.2) rotate(var(--rot, 0deg));
+  }
+  65% {
+    opacity: 0.85;
+    transform: translate(calc(var(--tx) * 0.8), calc(var(--ty) * 0.8 + 2px)) scale(0.95) rotate(var(--rot, 0deg));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), calc(var(--ty) + 16px)) scale(0.3) rotate(var(--rot, 0deg));
+  }
+}
+
+.water-droplet {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, rgba(235, 248, 255, 0.95) 28%, rgba(186, 230, 253, 0.8) 60%, rgba(56, 189, 248, 0.45) 100%);
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4),
+              0 0 8px rgba(186, 230, 253, 0.85),
+              inset 0 1px 2px #ffffff;
+  animation: droplet-spray var(--duration, 0.46s) cubic-bezier(0.12, 0.88, 0.35, 1) forwards;
+  z-index: 60;
+}
+
+@keyframes water-surface-ripple {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+.animate-water-sheen {
+  animation: water-surface-ripple 0.48s ease-out forwards;
+}
+
+/* ========================================================================== */
+/* PRINT STYLES - MAANDALIZI YA KUCHAPISHA (PRINTING STYLES)                 */
+/* Inahakikisha risiti, vocha, na ripoti zote zinatoka safi kwenye karatasi  */
+/* ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 10mm 10mm;
+  }
+
+  /* Force light theme and high-contrast print colors */
+  html, body, #root {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Elements to never print */
+  .no-print,
+  button:not(.force-print),
+  input[type="button"],
+  input[type="submit"],
+  nav,
+  aside,
+  .sidebar,
+  .toast-notification,
+  .modal-backdrop,
+  header .no-print-header {
+    display: none !important;
+  }
+
+  /* When printing an active receipt or voucher modal */
+  body:has(.printable-modal-overlay) > #root > *:not(:has(.printable-modal-overlay)),
+  body:has(.printable-modal-overlay) header,
+  body:has(.printable-modal-overlay) aside,
+  body:has(.printable-modal-overlay) nav {
+    display: none !important;
+  }
+
+  .printable-modal-overlay {
+    position: static !important;
+    display: block !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    inset: auto !important;
+    z-index: auto !important;
+  }
+
+  .printable-receipt-card,
+  .printable-voucher-card,
+  .printable-area {
+    position: static !important;
+    display: block !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1.5px solid #000000 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    padding: 16px !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure all child text within receipt/voucher is dark and crisp */
+  .printable-receipt-card *,
+  .printable-voucher-card *,
+  .printable-area * {
+    color: #000000 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    border-color: #333333 !important;
+    background-color: transparent !important;
+  }
+
+  /* Specific accents on print (boxes, headers, badges) */
+  .printable-receipt-card .receipt-header-box,
+  .printable-voucher-card .voucher-header-box {
+    border-bottom: 2px solid #000000 !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+  }
+
+  .printable-receipt-card .receipt-badge,
+  .printable-voucher-card .voucher-badge {
+    border: 1.5px solid #000000 !important;
+    background: #f3f4f6 !important;
+    color: #000000 !important;
+    padding: 3px 8px !important;
+    font-weight: 800 !important;
+    border-radius: 4px !important;
+  }
+
+  .printable-receipt-card .receipt-item-row {
+    border-bottom: 1px dashed #666666 !important;
+    padding: 4px 0 !important;
+  }
+
+  .printable-receipt-card .receipt-total-row {
+    border-top: 2px solid #000000 !important;
+    margin-top: 8px !important;
+    padding-top: 6px !important;
+  }
+
+  /* Tables in Reports */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 15px !important;
+  }
+
+  table th {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    border: 1px solid #94a3b8 !important;
+    padding: 6px 8px !important;
+    font-weight: 700 !important;
+    font-size: 10pt !important;
+  }
+
+  table td {
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 5px 8px !important;
+    font-size: 9.5pt !important;
+  }
+
+  table tr {
+    page-break-inside: avoid !important;
+  }
+
+  /* Cards and Panels */
+  .glass-panel,
+  .glass-panel-zamboo,
+  .glass-panel-dark {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    color: #0f172a !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .glass-panel *,
+  .glass-panel-zamboo *,
+  .glass-panel-dark * {
+    text-shadow: none !important;
+  }
+
+  /* Headings & Texts */
+  h1, h2, h3, h4, h5, h6 {
+    color: #0f172a !important;
+    page-break-after: avoid !important;
+  }
+
+  p, span, div {
+    color: inherit;
+  }
+
+  /* Make sure images (signatures, logos) remain crisp and visible */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+    filter: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
